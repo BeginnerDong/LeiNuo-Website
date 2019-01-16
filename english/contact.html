@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>详情</title>
+<!-- custom-theme -->
+<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+<meta name="keywords" content="雷诺能源">
+<meta name="description" content="雷诺能源">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/basic.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="../css/wxParse.css" rel="stylesheet"/>
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+<link href="../seo/sitemap.html.txt">
+<link href="../seo/sitemap.txt">
+<link href="../seo/sitemap.xml">
+<script src="../js/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="../js/base.js" type="application/javascript"></script>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script src="../js/rem.js"></script>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="../js/bootstrap.js"></script>
+
+<!--[if IE 9]>
+ <style>
+    .animatedOpacity{
+        opacity:1;
+        }
+    .sort_in{
+    margin-top:0.3rem;
+    }
+ </style>
+<![endif]-->
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="navigation fixed-top">
+          <div class="navigation_box contain">
+             <div class="nav_toggle hidden-this" @click="toggleMenu">
+                 <img src="../images/nav.png" />
+             </div>
+            <div class="navigation_change">
+                <a class="color2" href="../index.html">中文</a>
+                <span class="color">/</span>
+                <a class="color" href="english/index.html">English</a>
+            </div>
+             <div class="navigation_right" id="computer">
+                 <ul class="navigate">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
+                        <a href="about.html">ABOUT</a>
+                        <div class="second" :class="(is_menu?'after':'orgin')">
+                            <a href="" class="font20">Company Overview</a>
+                            <a href="" class="font20">Company Qualification</a>
+                            <a href="" class="font20">Company structure</a>
+                            <a href="" class="font20">Project Distribution</a>
+                            <a href="" class="font20">Company Culture</a>
+                        </div>
+                    </li>
+                    <li><a href="case.html">PROJECT</a></li>
+                    <li><a href="contact.html" class="active">CONTACT</a></li>
+                </ul>
+             </div>
+             <div class="navigation_left flex">
+                 <a href="index.html"><img src="../images/logo.png" class="img-responsive"></a>
+             </div>
+             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
+                 <ul class="navigate">
+                     <li><a href="index.html">HOME</a></li>
+                    <li class="nav_about" @click="clickShow">
+                        <a>ABOUT</a>
+                        <div class="second_phone" :style="(is_menu?'display:block':'display:none')">
+                            <a href="" class="font20">Company Overview</a>
+                            <a href="" class="font20">Company Qualification</a>
+                            <a href="" class="font20">Company structure</a>
+                            <a href="" class="font20">Project Distribution</a>
+                            <a href="" class="font20">Company Culture</a>
+                        </div>
+                    </li>
+                    <li><a href="case.html">PROJECT</a></li>
+                    <li><a href="contact.html" class="active">CONTACT</a></li>
+                </ul>
+             </div>
+          </div>  
+        </div>
+    </header>
+    <div class="banner">
+        <img src="../images/banner.jpg" class="img-responsive" />
+    </div>
+</div>
+    <div id="contact">
+        <div class="contain">
+            <div class="title">
+                <h2>
+                    <p class="color_a font36">Contact</p>
+                </h2>
+            </div>
+            <div id="contact_cont">
+                <div class="contact_left">
+                    <div class="contact_item contact_phone">
+                        <img src="../images/icon1.png"/>
+                        <p class="font16 color_a">74678787877</p>
+                    </div>
+                    <div class="contact_item contact_email">
+                        <img src="../images/icon2.png"/>
+                        <p class="font16 color_a">Send Email</p>
+                    </div>
+                </div>
+                <div class="contact_right">
+                    <div id="dituContent" style="min-height:6rem;overflow:hidden;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="footer">
+    <div class="footer_cont">
+        <p class="font14 color_a">Copyight©2017 Xi'an Renault Energy Engineering Consulting corporation. All rights reserved. </p>
+        <p class="font14 color_a">all rights reserved：Shan ICP17020086-1</p>
+        <p class="font14 color_a">Technical support: Xi'an Solely Technology Company</p>
+    </div>
+</div>
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#333;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+
+    .fade-enter-active{
+      transition: opacity .5s;
+    }
+    .fade-enter /* .fade-leave-active below version 2.1.8 */ {
+      opacity: 0 ;
+    }
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+<script type="text/javascript">
+
+    function initMap(){
+        createMap();
+        setMapEvent();
+        addMapControl();
+        addMarker();
+    }
+    
+    function createMap(){
+        var map = new BMap.Map("dituContent");
+        var point = new BMap.Point(108.955322,34.328527);
+        map.centerAndZoom(point,17);
+        window.map = map;
+    }
+    
+    function setMapEvent(){
+        map.enableDragging();
+        map.enableScrollWheelZoom();
+        map.enableDoubleClickZoom();
+        map.enableKeyboard();
+    }
+    
+    function addMapControl(){ 
+    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+    map.addControl(ctrl_nav);
+    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+    map.addControl(ctrl_ove);
+    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+    map.addControl(ctrl_sca);
+    }
+
+    var markerArr = [{title:"陕西省西安市未央区未央路149号银河华庭D座2607",content:"电话:029-89569644",point:"108.955322|34.328527",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+         ];
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"transparent",
+                        color:"#000",
+                        cursor:"pointer",
+            });
+            
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    function createIcon(json){
+        var icon = new BMap.Icon("../images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();
+</script>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="js/bootstrap.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/rem.js"></script>
+<script type="text/babel">
+var app = new Vue({
+    el: '#app',
+    data: function() {
+        return {
+            is_menu:false,
+            is_toggle:false,
+        }
+    },
+    created: function () {
+       
+    },
+    methods:{
+        toggleMenu:function(e){
+            var self = this;
+            self.is_toggle = !self.is_toggle;
+        },
+        clickShow: function(e) {
+            const self =this;
+            self.is_menu = !self.is_menu;          
+        },
+        menuShow: function(e) {
+            const self =this;
+            self.is_menu = true;          
+        },
+        menuHide: function(e) {
+            const self =this;                              
+             self.is_menu = false;                    
+        },
+    }
+});
+</script>
+<script type="text/javascript">
+ $(window).load(function() {
+    $('.xwSmall').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.xwSmall').addClass('fadeInUp animated');
+        }   
+    }, {
+        offset: '800px'
+    });
+
+    $('.wxSmallMarket').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.wxSmallMarket').addClass('fadeInUp animated');
+        }   
+    }, {
+        offset: '600px'
+    });
+    $('.need_sort').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.fade_leftTop').addClass('fadeInLeftTop animated'); 
+            $('.fade_rightTop').addClass('fadeInRightTop animated');
+            $('.fade_leftBottom').addClass('fadeInLeftBottom animated');
+            $('.fade_rightBottom').addClass('fadeInRightBottom animated');
+            $('.fadein_top').addClass('fadeInUp animated');
+            $('.fadein_bottom').addClass('fadeInDown animated');
+        }   
+    }, {
+        offset: '600px'
+    });
+    $('.customize').waypoint(function(direction) {
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.customize_img').addClass('clude animated');
+            $('.customize_detail').addClass('clude1 animated');
+        }
+    }, {
+        offset: '600px'
+
+    }); 
+     $('.wx_process').waypoint(function(direction) {
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.process_first').each(function(k) {
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass('fadeInLeft  animated');
+                  //  el.removeClass('.animatedOpacity');
+                }, k * 100, 'easeInOutExpo');
+            });
+        }
+    }, {
+        offset: '600px'
+
+    });
+});
+</script>
+<script>
+    function back_top(){
+     document.body.scrollTop = document.documentElement.scrollTop = 0;
+     }
+ </script>
+</body>
+</html>

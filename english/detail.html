@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>详情</title>
+<!-- custom-theme -->
+<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+<meta name="keywords" content="西安交通大学人居学院">
+<meta name="description" content="西安交通大学人居学院">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/basic.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="../css/wxParse.css" rel="stylesheet"/>
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+<link href="../seo/sitemap.html.txt">
+<link href="../seo/sitemap.txt">
+<link href="../seo/sitemap.xml">
+<script src="../js/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="../js/base.js" type="application/javascript"></script>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script src="../js/rem.js"></script>
+<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="../js/bootstrap.js"></script>
+
+<!--[if IE 9]>
+ <style>
+    .animatedOpacity{
+        opacity:1;
+        }
+    .sort_in{
+    margin-top:0.3rem;
+    }
+ </style>
+<![endif]-->
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="navigation fixed-top">
+          <div class="navigation_box contain">
+             <div class="nav_toggle hidden-this" @click="toggleMenu">
+                 <img src="../images/nav.png" />
+             </div>
+            <div class="navigation_change">
+               <a class="color2" href="../index.html">中文</a>
+                <span class="color">/</span>
+                <a class="color" href="english/index.html">English</a>
+            </div>
+             <div class="navigation_right" id="computer">
+                 <ul class="navigate">
+                    <li><a href="index.html">HOME</a></li>
+                    <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
+                        <a href="about.html">ABOUT</a>
+                        <div class="second" :class="(is_menu?'after':'orgin')">
+                            <a href="" class="font20">Company Overview</a>
+                            <a href="" class="font20">Company Qualification</a>
+                            <a href="" class="font20">Company structure</a>
+                            <a href="" class="font20">Project Distribution</a>
+                            <a href="" class="font20">Company Culture</a>
+                        </div>
+                    </li>
+                    <li><a href="case.html" class="active">PROJECT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+             </div>
+             <div class="navigation_left flex">
+                 <a href="index.html"><img src="../images/logo.png" class="img-responsive"></a>
+             </div>
+             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
+                 <ul class="navigate">
+                     <li><a href="index.html" >HOME</a></li>
+                    <li class="nav_about" @click="clickShow">
+                        <a>ABOUT</a>
+                        <div class="second_phone" :style="(is_menu?'display:block':'display:none')">
+                            <a href="" class="font20">Company Overview</a>
+                            <a href="" class="font20">Company Qualification</a>
+                            <a href="" class="font20">Company structure</a>
+                            <a href="" class="font20">Project Distribution</a>
+                            <a href="" class="font20">Company Culture</a>
+                        </div>
+                    </li>
+                    <li><a href="case.html" class="active">PROJECT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+             </div>
+          </div>  
+        </div>
+    </header>
+    <div class="detail">
+        <div class="contain">
+            <div class="detail_title">
+                <p class="font20 color2 ">The company's projects have spread over more than 20 provinces and municipalitiesunder the central government </p>
+                <p class="font16 color detail_time">2018-9-9</p>
+            </div>
+            <div class="detail_cont">
+                <div class="font16 color6">
+                    The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.
+                </div>
+                <img src="../images/banner.jpg" class="img-responsive"/>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="js/bootstrap.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/my.js"></script>
+<script src="js/rem.js"></script>
+<script type="text/babel">
+var app = new Vue({
+    el: '#app',
+    data: function() {
+        return {
+            is_menu:false,
+            is_toggle:false,
+        }
+    },
+    created: function () {
+    },
+    methods:{
+       toggleMenu:function(e){
+            var self = this;
+            self.is_toggle = !self.is_toggle;
+        },
+        clickShow: function(e) {
+            const self =this;
+            self.is_menu = !self.is_menu;          
+        },
+        menuShow: function(e) {
+            const self =this;
+            self.is_menu = true;          
+        },
+        menuHide: function(e) {
+            const self =this;                              
+             self.is_menu = false;                    
+        },
+    }
+});
+</script>
+<script type="text/javascript">
+ $(window).load(function() {
+    $('.xwSmall').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.xwSmall').addClass('fadeInUp animated');
+        }   
+    }, {
+        offset: '800px'
+    });
+
+    $('.wxSmallMarket').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.wxSmallMarket').addClass('fadeInUp animated');
+        }   
+    }, {
+        offset: '600px'
+    });
+    $('.need_sort').waypoint(function(direction) {
+       if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.fade_leftTop').addClass('fadeInLeftTop animated'); 
+            $('.fade_rightTop').addClass('fadeInRightTop animated');
+            $('.fade_leftBottom').addClass('fadeInLeftBottom animated');
+            $('.fade_rightBottom').addClass('fadeInRightBottom animated');
+            $('.fadein_top').addClass('fadeInUp animated');
+            $('.fadein_bottom').addClass('fadeInDown animated');
+        }   
+    }, {
+        offset: '600px'
+    });
+    $('.customize').waypoint(function(direction) {
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.customize_img').addClass('clude animated');
+            $('.customize_detail').addClass('clude1 animated');
+        }
+    }, {
+        offset: '600px'
+
+    }); 
+     $('.wx_process').waypoint(function(direction) {
+        if (direction === 'down' && !$(this.element).hasClass('animated')) {
+            $('.process_first').each(function(k) {
+                var el = $(this);
+                setTimeout(function() {
+                    el.addClass('fadeInLeft  animated');
+                  //  el.removeClass('.animatedOpacity');
+                }, k * 100, 'easeInOutExpo');
+            });
+        }
+    }, {
+        offset: '600px'
+
+    });
+});
+</script>
+<script>
+    function back_top(){
+     document.body.scrollTop = document.documentElement.scrollTop = 0;
+     }
+ </script>
+</body>
+</html>
