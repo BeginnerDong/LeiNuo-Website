@@ -232,5 +232,29 @@
 	.footer p{
 		font-size:0.12rem;
 	}
+	.case_left{
+		float:none;
+		position: fixed;
+		left:-35%;
+		top:30%;
+		background:#fff;
+		width:35%;
+	}
+	.case_left h4{
+		height:1rem;
+		line-height:1rem;
+	}
+	.case_left li{
+		height:0.9rem;
+		line-height:0.9rem;
+		margin-bottom:0.3rem;
+	}
+	.case_right{
+		width:100%;
+		float:none;
+	}
+	.click_btn{
+		display:block;
+	}
 }
 

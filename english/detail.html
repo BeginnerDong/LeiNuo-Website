@@ -56,13 +56,6 @@
                     <li><a href="index.html">HOME</a></li>
                     <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
                         <a href="about.html">ABOUT</a>
-                        <div class="second" :class="(is_menu?'after':'orgin')">
-                            <a href="" class="font20">Company Overview</a>
-                            <a href="" class="font20">Company Qualification</a>
-                            <a href="" class="font20">Company structure</a>
-                            <a href="" class="font20">Project Distribution</a>
-                            <a href="" class="font20">Company Culture</a>
-                        </div>
                     </li>
                     <li><a href="case.html" class="active">PROJECT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -75,14 +68,7 @@
                  <ul class="navigate">
                      <li><a href="index.html" >HOME</a></li>
                     <li class="nav_about" @click="clickShow">
-                        <a>ABOUT</a>
-                        <div class="second_phone" :style="(is_menu?'display:block':'display:none')">
-                            <a href="" class="font20">Company Overview</a>
-                            <a href="" class="font20">Company Qualification</a>
-                            <a href="" class="font20">Company structure</a>
-                            <a href="" class="font20">Project Distribution</a>
-                            <a href="" class="font20">Company Culture</a>
-                        </div>
+                        <a>ABOUT</a>               
                     </li>
                     <li><a href="case.html" class="active">PROJECT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -101,7 +87,25 @@
                 <div class="font16 color6">
                     The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.
                 </div>
-                <img src="../images/banner.jpg" class="img-responsive"/>
+                <div class="detail_carousel">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div  class="item active">
+                              <img src="../images/detail.jpg" class="img-responsive banner_img">
+                            </div>
+                            <div  class="item">
+                              <img src="../images/detail.jpg" class="img-responsive banner_img">
+                            </div>
+                        </div> 
+                        <a class="left carousel-control flex" href="#carousel-example-generic" role="button" data-slide="prev">
+                    
+                            <img src="../images/icon11.png"/>
+                        </a>
+                        <a class="right carousel-control flex" href="#carousel-example-generic" role="button" data-slide="next">
+                           <img src="../images/icon.png"/>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

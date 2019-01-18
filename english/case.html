@@ -63,15 +63,8 @@
              <div class="navigation_right" id="computer">
                  <ul class="navigate">
                     <li><a href="index.html">HOME</a></li>
-                    <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
+                    <li class="nav_about">
                         <a href="about.html">ABOUT</a>
-                        <div class="second" :class="(is_menu?'after':'orgin')">
-                            <a href="" class="font20">Company Overview</a>
-                            <a href="" class="font20">Company Qualification</a>
-                            <a href="" class="font20">Company structure</a>
-                            <a href="" class="font20">Project Distribution</a>
-                            <a href="" class="font20">Company Culture</a>
-                        </div>
                     </li>
                     <li><a href="case.html" class="active">PROJECT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -85,13 +78,6 @@
                      <li><a href="index.html">HOME</a></li>
                     <li class="nav_about" @click="clickShow">
                         <a>ABOUT</a>
-                        <div class="second_phone" :style="(is_menu?'display:block':'display:none')">
-                            <a href="" class="font20">Company Overview</a>
-                            <a href="" class="font20">Company Qualification</a>
-                            <a href="" class="font20">Company structure</a>
-                            <a href="" class="font20">Project Distribution</a>
-                            <a href="" class="font20">Company Culture</a>
-                        </div>
                     </li>
                     <li><a href="case.html" class="active">PROJECT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -110,38 +96,56 @@
                     <p class="color_a font36">Project</p>
                 </h2>
             </div>
-            <div class="case_cont shadow1 w710" @click="intoPath">
-                <div class=" case_box">
-                    <div class="case_box_left">
-                        <img src="../images/img6.jpg"/>
+            <div class="click_btn" :class="is_change?'':'changeJister'" @click="change">
+                <div class="change">点击切换</div>
+            </div>
+            <div id="case">
+                <div class="case_left" :class="is_change?'slideIn':''">
+                    <h4 class="font20 color1">工程案例</h2>
+                    <ul>
+                        <li class="fontt20 color active">风电</li>
+                        <li class="fontt20 color">火电</li>
+                        <li class="fontt20 color">输变电</li>
+                        <li class="fontt20 color">光伏发电</li>
+
+                    </ul>
+                </div>
+                <div class="case_right shadow1">
+                    <div class="case_cont project shadow1 w710" @click="intoPath">
+                        <div class=" case_box">
+                            <div class="case_box_left">
+                                <img src="../images/img6.jpg"/>
+                            </div>
+                            <div class="case_box_right">
+                                <div class="case_tlt">
+                                    <h3 class="font20 color_a avoidOverflow2">TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</h3>
+                                </div>
+                                <div class="case_description avoidOverflow4 font20 color_a3">
+                                   contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentc,ontentcontentco,ntentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentconten,tcontentcontentcontent,contentcontent,contentconten,tcontentcontentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentcontentcont
+                                </div>
+                                <p class="font16 color6">2158-9-5</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="case_box_right">
-                        <div class="case_tlt">
-                            <h3 class="font20 color_a avoidOverflow2">TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</h3>
+                    <div class="case_cont project shadow1 w710"  @click="intoPath">
+                        <div class=" case_box">
+                            <div class="case_box_left1">
+                                <img src="../images/img6.jpg"/>
+                            </div>
+                            <div class="case_box_right1">
+                                <div class="case_tlt">
+                                    <h3 class="font20 color_a avoidOverflow2">TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</h3>
+                                </div>
+                                <div class="case_description avoidOverflow4 font20 color_a3">
+                                    contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentc,ontentcontentco,ntentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentconten,tcontentcontentcontent,contentcontent,contentconten,tcontentcontentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentcontentcont
+                                </div>
+                                <p class="font16 color6">2158-9-5</p>
+                            </div>
                         </div>
-                        <div class="case_description avoidOverflow4 font20 color_a3">
-                           contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentc,ontentcontentco,ntentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentconten,tcontentcontentcontent,contentcontent,contentconten,tcontentcontentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentcontentcont
-                        </div>
-                        <p class="font16 color6">2158-9-5</p>
                     </div>
                 </div>
             </div>
-            <div class="case_cont shadow1 w710"  @click="intoPath">
-                <div class=" case_box">
-                    <div class="case_box_left1">
-                        <img src="../images/img6.jpg"/>
-                    </div>
-                    <div class="case_box_right1">
-                        <div class="case_tlt">
-                            <h3 class="font20 color_a avoidOverflow2">TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</h3>
-                        </div>
-                        <div class="case_description avoidOverflow4 font20 color_a3">
-                            contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentc,ontentcontentco,ntentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentconten,tcontentcontentcontent,contentcontent,contentconten,tcontentcontentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentcontentcont
-                        </div>
-                        <p class="font16 color6">2158-9-5</p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -152,27 +156,22 @@
         <p class="font14 color_a">Technical support: Xi'an Solely Technology Company</p>
     </div>
 </div>
-<script src="js/rem.js"></script>
 <script type="text/babel">
 var app = new Vue({
     el: '#app',
     data: function() {
         return {
             is_toggle:false,
-            is_menu:false,
+            is_change:false,
         }
     },
     created () {
         const self = this;
     },
     methods:{
-        menuShow: function(e) {
-            const self =this;
-            self.is_menu = true;          
-        },
-        menuHide: function(e) {
-            const self =this;                              
-             self.is_menu = false;                    
+        change:function(e){
+            const self = this;
+            self.is_change = !self.is_change;
         },
         clickShow: function(e) {
             const self =this;

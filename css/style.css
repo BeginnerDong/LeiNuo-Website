@@ -654,6 +654,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     width:43%;
     height:100%;
     float:left;
+    overflow: hidden;
 }
 .case_box_right{
     padding-left:3%;
@@ -775,9 +776,6 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     text-align:right;
     width:100%;
 }
-.detail_cont img{
-    margin:0.2rem auto;
-}
 .banner img{
     width:100%;
     height:6rem;
@@ -853,4 +851,125 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     line-height:0.6rem;
     text-align: center;
     margin:0.48rem auto 0 auto;
+}
+/***********项目案例***************/
+.case_left{
+    width:22.5%;
+    float:left;
+    border:solid 1px #0c76f0;
+    padding-bottom:0.2rem;
+    transition: all 1s;
+    -webkit-transition:all 1s;
+}
+.case_right{
+    width:73.5%;
+    float:right;
+}
+#case{
+    overflow:hidden;
+}
+.case_left h4{
+    width:100%;
+    height:0.5rem;
+    line-height:0.5rem;
+    background:#0c76f0;
+    text-align: center;
+}
+.case_left ul{
+    width:80%;
+    margin:0.16rem auto 0 auto;
+}
+.case_left li{
+    width:100%;
+    height:0.5rem;
+    border:solid 1px #d7d7d7;
+    margin:0 auto 0.05rem auto;
+    display:block;
+    line-height:0.5rem;
+    text-align:center;
+    background:#f5f5f5;
+}
+.case_left .active{
+    border:solid 1px #0c76f0;
+}
+.project{
+    height:3.3rem;
+}
+.project .case_box{
+    height:2.64rem;
+}
+.project .case_tlt{
+    height:0.7rem;
+}
+.project  .case_box_right p, .project  .case_box_right1 p{
+    margin-top: 0.3rem;
+}
+.click_btn{
+    width:3rem;
+    height:0.8rem;
+    border-radius:0 0.3rem 0.3rem 0;
+    overflow:hidden;
+    position: fixed;
+    left:0;
+    top:25%;
+    display:none;
+    text-align: center;
+    line-height:0.8rem;
+    color:#fff;
+    cursor: pointer;
+    transition: all 1s;
+    -webkit-transition:all 1s;
+}
+.changeJister{
+    animation: change_move 0.5s infinite linear;
+    -webkit-animation: change_move 0.5s infinite linear;
+    
+}
+.change{
+    background:#0c76f0;
+    width:100%;
+    height:100%;
+}
+@keyframes change_move {
+    0%{
+        left:0;
+    }
+    50%{
+        left:2%;
+    }
+    100%{
+        left:0;
+    }
+}
+.slideIn{
+    transform: translateX(100%);
+}
+.slideOut{
+    transform: translateX(-100%);
+}
+.carousel-control.left,.carousel-control.right{
+    display:block;
+    line-height:5.72rem;
+}
+.detail_carousel{
+    height:5.72rem;
+    width:100%;
+    overflow:hidden;
+    margin-bottom:0.3rem;
+}
+.detail_carousel image{
+    width:100%;
+    height:5.72rem;
+}
+.carousel{
+    width:100%;
+    height:100%;
+    margin-top:0.3rem;
+}
+.carousel-inner{
+    width:100%;
+    height:100%;
+}
+.carousel .item{
+    height:100%;
 }

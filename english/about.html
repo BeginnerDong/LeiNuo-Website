@@ -65,13 +65,6 @@
                     <li><a href="index.html">HOME</a></li>
                     <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
                         <a href="about.html" class="active">ABOUT</a>
-                        <div class="second" :class="(is_menu?'after':'orgin')">
-                            <a href="" class="font20">Company Overview</a>
-                            <a href="" class="font20">Company Qualification</a>
-                            <a href="" class="font20">Company structure</a>
-                            <a href="" class="font20">Project Distribution</a>
-                            <a href="" class="font20">Company Culture</a>
-                        </div>
                     </li>
                     <li><a href="case.html">PROJECT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -85,13 +78,6 @@
                      <li><a href="index.html">HOME</a></li>
                     <li class="nav_about" @click="clickShow">
                         <a class="active">ABOUT</a>
-                       <div class="second_phone" :style="(is_menu?'display:block':'display:none')">
-                            <a href="" class="font20">Company Overview</a>
-                            <a href="" class="font20">Company Qualification</a>
-                            <a href="" class="font20">Company structure</a>
-                            <a href="" class="font20">Project Distribution</a>
-                            <a href="" class="font20">Company Culture</a>
-                        </div>
                     </li>
                     <li><a href="case.html">PROJECT</a></li>
                     <li><a href="contact.html">CONTACT</a></li>
@@ -110,10 +96,27 @@
                     <p class="color_a font36">Company Overview</p>
                 </h2>
             </div>
-            <div class="about_cont">
-                <p class="color_a font14 avolidOverflow" >The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.</p>
-                <img src="../images/img3.jpg" class="img-responsive"/>
-                <p class="color_a font14">The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.</p>
+            <div class="click_btn" :class="is_change?'':'changeJister'" @click="change">
+                <div class="change">点击切换</div>
+            </div>
+            <div id="case">
+                <div class="case_left" :class="is_change?'slideIn':''">
+                    <h4 class="font20 color1">工程案例</h4>
+                    <ul>
+                        <li class="fontt20 color active">风电</li>
+                        <li class="fontt20 color">火电</li>
+                        <li class="fontt20 color">输变电</li>
+                        <li class="fontt20 color">光伏发电</li>
+
+                    </ul>
+                </div>
+                <div class="case_right shadow1">
+                    <div class="about_cont">
+                        <p class="color_a font14 avolidOverflow" >The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.</p>
+                        <img src="../images/img3.jpg" class="img-responsive"/>
+                        <p class="color_a font14">The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -162,7 +165,7 @@ var app = new Vue({
     data: function() {
         return {
             is_toggle:false,
-            is_menu:false,
+            is_change:false,
         }
     },
     created () {
@@ -171,11 +174,7 @@ var app = new Vue({
     methods:{
         menuShow: function(e) {
             const self =this;
-            self.is_menu = true;          
-        },
-        menuHide: function(e) {
-            const self =this;                              
-             self.is_menu = false;                    
+            self.is_change = !self.is_change;          
         },
         clickShow: function(e) {
             const self =this;

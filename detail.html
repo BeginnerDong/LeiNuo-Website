@@ -50,13 +50,6 @@
                     <li><a href="index.html">首页</a></li>
                     <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
                         <a href="about.html">关于我们</a>
-                        <div class="second" :class="(is_menu?'after':'orgin')">
-                            <a href="" class="font20">公司概况</a>
-                            <a href="" class="font20">公司资质</a>
-                            <a href="" class="font20">公司构架</a>
-                            <a href="" class="font20">项目分部</a>
-                            <a href="" class="font20">企业文化</a>
-                        </div>
                     </li>
                     <li><a href="case.html" class="active">工程案例</a></li>
                     <li><a href="contact.html">联系我们</a></li>
@@ -70,13 +63,6 @@
                      <li><a href="index.html" >首页</a></li>
                     <li class="nav_about" @click="clickShow">
                         <a>关于我们</a>
-                        <div class="second_phone" :style="(is_menu?'display:block':'display:none')">
-                            <a href="" class="font20">公司概况</a>
-                            <a href="" class="font20">公司资质</a>
-                            <a href="" class="font20">公司构架</a>
-                            <a href="" class="font20">项目分部</a>
-                            <a href="" class="font20">企业文化</a>
-                        </div>
                     </li>
                     <li><a href="case.html" class="active">工程案例</a></li>
                     <li><a href="contact.html">联系我们</a></li>
@@ -95,7 +81,26 @@
                 <div class="font16 color6">
                     内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内
                 </div>
-                <img src="images/banner.jpg" class="img-responsive"/>
+                 <div class="detail_carousel">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox">
+                            <div  class="item active">
+                              <img src="images/detail.jpg" class="img-responsive banner_img">
+                            </div>
+                            <div  class="item">
+                              <img src="images/detail.jpg" class="img-responsive banner_img">
+                            </div>
+                        </div> 
+                        <a class="left carousel-control flex" href="#carousel-example-generic" role="button" data-slide="prev">
+                    
+                            <img src="images/icon11.png"/>
+                        </a>
+                        <a class="right carousel-control flex" href="#carousel-example-generic" role="button" data-slide="next">
+                           <img src="images/icon.png"/>
+                        </a>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -136,64 +141,5 @@ var app = new Vue({
     }
 });
 </script>
-<script type="text/javascript">
- $(window).load(function() {
-    $('.xwSmall').waypoint(function(direction) {
-       if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('.xwSmall').addClass('fadeInUp animated');
-        }   
-    }, {
-        offset: '800px'
-    });
-
-    $('.wxSmallMarket').waypoint(function(direction) {
-       if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('.wxSmallMarket').addClass('fadeInUp animated');
-        }   
-    }, {
-        offset: '600px'
-    });
-    $('.need_sort').waypoint(function(direction) {
-       if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('.fade_leftTop').addClass('fadeInLeftTop animated'); 
-            $('.fade_rightTop').addClass('fadeInRightTop animated');
-            $('.fade_leftBottom').addClass('fadeInLeftBottom animated');
-            $('.fade_rightBottom').addClass('fadeInRightBottom animated');
-            $('.fadein_top').addClass('fadeInUp animated');
-            $('.fadein_bottom').addClass('fadeInDown animated');
-        }   
-    }, {
-        offset: '600px'
-    });
-    $('.customize').waypoint(function(direction) {
-        if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('.customize_img').addClass('clude animated');
-            $('.customize_detail').addClass('clude1 animated');
-        }
-    }, {
-        offset: '600px'
-
-    }); 
-     $('.wx_process').waypoint(function(direction) {
-        if (direction === 'down' && !$(this.element).hasClass('animated')) {
-            $('.process_first').each(function(k) {
-                var el = $(this);
-                setTimeout(function() {
-                    el.addClass('fadeInLeft  animated');
-                  //  el.removeClass('.animatedOpacity');
-                }, k * 100, 'easeInOutExpo');
-            });
-        }
-    }, {
-        offset: '600px'
-
-    });
-});
-</script>
-<script>
-    function back_top(){
-     document.body.scrollTop = document.documentElement.scrollTop = 0;
-     }
- </script>
 </body>
 </html>
