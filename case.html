@@ -77,8 +77,8 @@
              <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
                  <ul class="navigate">
                      <li><a href="index.html">首页</a></li>
-                    <li class="nav_about" @click="clickShow">
-                        <a>关于我们</a>           
+                    <li class="nav_about">
+                        <a href="about.html">关于我们</a>           
                     </li>
                     <li><a href="case.html" class="active">工程案例</a></li>
                     <li><a href="contact.html">联系我们</a></li>
@@ -92,27 +92,26 @@
     </div>
     <div class="case">
         <div class="contain">
-            <div class="title">
-                <h2>
-                    <p class="color_a font36">工程案例</p>
-                    <span class="font16 color_a">COMPANGY’S CASE</span>
-                </h2>
-            </div>
             <div class="click_btn" :class="is_change?'':'changeJister'" @click="change">
                 <div class="change">点击切换</div>
             </div>
             <div id="case">
                 <div class="case_left" :class="is_change?'slideIn':''">
-                    <h4 class="font20 color1">工程案例</h2>
                     <ul>
-                        <li class="fontt20 color active">风电</li>
-                        <li class="fontt20 color">火电</li>
-                        <li class="fontt20 color">输变电</li>
-                        <li class="fontt20 color">光伏发电</li>
+                        <li class="font16">风电</li>
+                        <li class="font16">火电</li>
+                        <li class="font16 active">输变电</li>
+                        <li class="font16">光伏发电</li>
 
                     </ul>
                 </div>
                 <div class="case_right">
+                    <div class="title">
+                        <h2>
+                            <p class="color_a font36">工程案例</p>
+                            <span class="font16 color_a">COMPANGY’S CASE</span>
+                        </h2>
+                    </div>
                     <div class="case_cont project shadow1 w710" @click="intoPath">
                         <div class=" case_box">
                             <div class="case_box_left">
