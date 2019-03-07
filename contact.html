@@ -41,29 +41,32 @@
                  <img src="images/nav.png" />
              </div>
              <div class="navigation_change">
-                 <a class="color" href="index.html">中文</a>
+                 <a class="color" href="contact.html">中文</a>
                  <span class="color">/</span>
-                 <a class="color2" href="english/index.html">English</a>
+                 <a class="color1" href="english/contact.html">English</a>
              </div>
+			 <div class="navigation_left flex">
+			     <a href="index.html"><img src="images/logo1.png" class="img-responsive"></a>
+			 </div>
              <div class="navigation_right" id="computer">
                  <ul class="navigate">
                     <li><a href="index.html">首页</a></li>
                     <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
                         <a href="about.html" href="about.html">关于我们</a>
                     </li>
+					<li><a href="news.html">公司资讯</a></li>
                     <li><a href="case.html">工程案例</a></li>
                     <li><a href="contact.html" class="active">联系我们</a></li>
                 </ul>
              </div>
-             <div class="navigation_left flex">
-                 <a href="index.html"><img src="images/logo.png" class="img-responsive"></a>
-             </div>
+             
              <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
                  <ul class="navigate">
                      <li><a href="index.html">首页</a></li>
                     <li class="nav_about" @click="clickShow">
                         <a href="about.html">关于我们</a>
                     </li>
+					<li><a href="news.html">公司资讯</a></li>
                     <li><a href="case.html">工程案例</a></li>
                     <li><a href="contact.html" class="active">联系我们</a></li>
                 </ul>
@@ -72,7 +75,16 @@
         </div>
     </header>
     <div class="banner">
-        <img src="images/banner.jpg" class="img-responsive" />
+    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    		<ol class="carousel-indicators">
+    			<li v-for="(item, index) in sliderData" data-target="#carousel-example-generic" :data-slide-to="index" :class="index=='0'?'active':''"></li>
+    		</ol>
+    		<div class="carousel-inner" role="listbox">
+    			<div  class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
+    			  <img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" style="height:7.7rem" class="img-responsive banner_img">
+    			</div>
+    		</div> 
+    	</div>
     </div>
 </div>
     <div id="contact">
@@ -86,12 +98,16 @@
             <div id="contact_cont">
                 <div class="contact_left">
                     <div class="contact_item contact_phone">
-                        <img src="images/icon1.png"/>
-                        <p class="font16 color_a">74678787877</p>
+                        <img src="images/icon2.png"/>
+						<p class="color_a font22">业务咨询</p>
+                        <p class="font16 color">leeno_xian@163.com</p>
+						<p class="font14 color_a">若您有业务方面联系，请点击这里联系我们</p>
                     </div>
                     <div class="contact_item contact_email">
                         <img src="images/icon2.png"/>
-                        <p class="font16 color_a">发送邮件</p>
+                        <p class="color_a font22">廉政建设</p>
+                        <p class="font16 color">leeno_lj@163.com</p>
+                        <p class="font14 color_a">在任何现场发现不良行为，可向我们举报，我们将第一时间处理问题</p>
                     </div>
                 </div>
                 <div class="contact_right">
@@ -219,12 +235,47 @@ var app = new Vue({
         return {
             is_menu:false,
             is_toggle:false,
-        }
-    },
-    created: function () {
+       sliderData:[]
+           }
+       },
        
-    },
-    methods:{
+       created () {
+           const self = this;
+
+			self.getSliderData()
+       },
+       
+       methods:{
+       	
+       	
+       	getSliderData() {
+       		const self = this;
+       		const postData = {};
+       		postData.searchItem = {
+       			thirdapp_id: 2
+       		};
+       		postData.getBefore = {
+       			caseData: {
+       				tableName: 'Label',
+       				searchItem: {
+       					title: ['=', ['联系我们轮播图']],
+       				},
+       				middleKey: 'parentid',
+       				key: 'id',
+       				condition: 'in',
+       			},
+       		};
+       		postData.order={
+       			create_time:'asc'
+       		};
+       		const callback = (res) => {
+       			console.log(1000, res);
+       			if (res.info.data.length > 0) {
+       				self.sliderData.push.apply(self.sliderData, res.info.data)
+       			}
+       		};
+       		window.base.labelGet(postData, callback);
+       	},
         toggleMenu:function(e){
             var self = this;
             self.is_toggle = !self.is_toggle;

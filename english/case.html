@@ -50,105 +50,131 @@
 
 <div id="app">
     <header>
-        <div class="navigation fixed-top">
-          <div class="navigation_box contain">
-             <div class="nav_toggle hidden-this" @click="toggleMenu">
-                 <img src="../images/nav.png" />
-             </div>
-            <div class="navigation_change">
-                <a class="color2" href="../index.html">中文</a>
-                <span class="color">/</span>
-                <a class="color" href="index.html">English</a>
-            </div>
-             <div class="navigation_right" id="computer">
-                 <ul class="navigate">
-                    <li><a href="index.html">HOME</a></li>
-                    <li class="nav_about">
-                        <a href="about.html">ABOUT</a>
-                    </li>
-                    <li><a href="case.html" class="active">PROJECT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-             </div>
-             <div class="navigation_left flex">
-                 <a href="index.html"><img src="../images/logo.png" class="img-responsive"></a>
-             </div>
-             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
-                 <ul class="navigate">
-                     <li><a href="index.html">HOME</a></li>
-                    <li class="nav_about" @click="clickShow">
-                        <a>ABOUT</a>
-                    </li>
-                    <li><a href="case.html" class="active">PROJECT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-             </div>
-          </div>  
+        	<div class="navigation fixed-top">
+        	<div class="navigation_box contain">
+        		<div class="nav_toggle hidden-this" @click="toggleMenu">
+        			<img src="images/nav.png" />
+        		</div>
+        		<div class="navigation_change">
+        			<a class="color1" href="../case.html">中文</a>
+        			<span class="color">/</span>
+        			<a class="color" href="case.html">English</a>
+        		</div>
+        		<div class="navigation_left flex">
+        			<a href="index.html"><img src="../images/logo1.png" class="img-responsive"></a>
+        		</div>
+        			<div class="navigation_right" id="computer">
+        		    <ul class="navigate">
+        		       <li><a href="index.html"  >HOME</a></li>
+        		       <li class="nav_about">
+        		           <a href="about.html">ABOUT</a>
+        		       </li>
+        			   <li><a href="news.html">NEWS</a></li>
+        		       <li><a href="case.html" class="active" >PROJECT</a></li>
+        		       <li><a href="contact.html">CONTACT</a></li>
+        		   </ul>
+        		</div>
+        		
+        		<div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
+        			<ul class="navigate">
+        				<li><a href="index.html"  >HOME</a></li>
+        				<li class="nav_about">
+        				    <a href="about.html">ABOUT</a>
+        				</li>
+        				<li><a href="news.html">NEWS</a></li>
+        				<li><a href="case.html" class="active">PROJECT</a></li>
+        				<li><a href="contact.html">CONTACT</a></li>
+        			</ul>
+        		</div>
+        	</div>
         </div>
     </header>
     <div class="banner">
-        <img src="../images/banner.jpg" class="img-responsive" />
+    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    		<ol class="carousel-indicators">
+    			<li v-for="(item, index) in sliderData" data-target="#carousel-example-generic" :data-slide-to="index" :class="index=='0'?'active':''"></li>
+    		</ol>
+    		<div class="carousel-inner" role="listbox">
+    			<div  class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
+    			  <img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" style="height:7.7rem" class="img-responsive banner_img">
+    			</div>
+    		</div> 
+    	</div>
     </div>
-    <div class="case">
-        <div class="contain">
-            <div class="title">
-                <h2>
-                    <p class="color_a font36">Project</p>
-                </h2>
-            </div>
-            <div class="click_btn" :class="is_change?'':'changeJister'" @click="change">
-                <div class="change">点击切换</div>
-            </div>
-            <div id="case">
-                <div class="case_left" :class="is_change?'slideIn':''">
-                    <h4 class="font20 color1">工程案例</h2>
-                    <ul>
-                        <li class="fontt20 color active">风电</li>
-                        <li class="fontt20 color">火电</li>
-                        <li class="fontt20 color">输变电</li>
-                        <li class="fontt20 color">光伏发电</li>
+<div class="case">
+				<div class="contain">
+					<div class="click_btn" :class="is_change?'':'changeJister'" @click="change">
+						<div class="change">点击切换</div>
+					</div>
+					<div id="case">
+						<div class="case_left" :class="is_change?'slideIn':''">
+							<ul>
+								<li class="font16 color " v-for="item in labelData" @click="changeLabel" :data-labelid="item.id" :class="labelid==item.id?'active':''">
+									{{item.title}}
+								</li>
+							</ul>
+						</div>
+						<div class="case_right_case">
+							<div class="case_cont_case project shadow1 w710" @click="intoDetail(item.id)" v-for="(item,index) in mainData">
+								<div class=" case_box_case" v-if="index%2 ==0">
 
-                    </ul>
-                </div>
-                <div class="case_right shadow1">
-                    <div class="case_cont project shadow1 w710" @click="intoPath">
-                        <div class=" case_box">
-                            <div class="case_box_left">
-                                <img src="../images/img6.jpg"/>
-                            </div>
-                            <div class="case_box_right">
-                                <div class="case_tlt">
-                                    <h3 class="font20 color_a avoidOverflow2">TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</h3>
-                                </div>
-                                <div class="case_description avoidOverflow4 font20 color_a3">
-                                   contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentc,ontentcontentco,ntentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentconten,tcontentcontentcontent,contentcontent,contentconten,tcontentcontentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentcontentcont
-                                </div>
-                                <p class="font16 color6">2158-9-5</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="case_cont project shadow1 w710"  @click="intoPath">
-                        <div class=" case_box">
-                            <div class="case_box_left1">
-                                <img src="../images/img6.jpg"/>
-                            </div>
-                            <div class="case_box_right1">
-                                <div class="case_tlt">
-                                    <h3 class="font20 color_a avoidOverflow2">TitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitleTitle</h3>
-                                </div>
-                                <div class="case_description avoidOverflow4 font20 color_a3">
-                                    contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentc,ontentcontentco,ntentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentconten,tcontentcontentcontent,contentcontent,contentconten,tcontentcontentcontentcontentcontentcontentcontentcon,tentcontentcontentcontentcontentcontentcontentcontentcontentcontentcont
-                                </div>
-                                <p class="font16 color6">2158-9-5</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
+									<div class="case_box_right1_case">
+										<div class="case_tlt_case">
+											<h3 class="font16 color_a avoidOverflow2">
+												{{item.title}}
+											</h3>
+										</div>
+										<div class="case_description_case avoidOverflow4 font14 color_a3">
+											{{item.description}}
+										</div>
+										<p class="font16 color6" style="margin-top: 0.5rem;">
+											{{item.create_time}}
+										</p>
+									</div>
+									<div class="case_box_left1_case">
+										<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" class="img-responsive" />
+									</div>
+								</div>
+								<div class=" case_box_case" v-if="index%2 !=0">
+									<div class="case_box_left1_case">
+										<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" class="img-responsive" />
+									</div>
+									<div class="case_box_right1_case">
+										<div class="case_tlt_case">
+											<h3 class="font16 color_a avoidOverflow2">
+												{{item.title}}
+											</h3>
+										</div>
+										<div class="case_description_case avoidOverflow4 font14 color_a3">
+											{{item.description}}
+										</div>
+										<p class="font16 color6" style="margin-top: 0.5rem;">
+											{{item.create_time}}
+										</p>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="fenye">
+							<span>
+								共{{allPages}}页
+							</span>
+							<a class="pages backPage" data-type="back" @click="changePage"><</a>
+							<span v-for="item in pageArray">
+								<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
+								<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
+							</span>
+							<a class="pages nextPage" data-type="next" @click="changePage">></a>
+							<span>
+								跳转至：
+								<input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 <div class="footer">
     <div class="footer_cont">
         <p class="font14 color_a">Copyight©2017 Xi'an Renault Energy Engineering Consulting corporation. All rights reserved. </p>
@@ -157,18 +183,150 @@
     </div>
 </div>
 <script type="text/babel">
-var app = new Vue({
+			var app = new Vue({
     el: '#app',
     data: function() {
         return {
             is_toggle:false,
+            is_menu:false,
             is_change:false,
-        }
-    },
-    created () {
-        const self = this;
-    },
-    methods:{
+			labelData:[],
+			labelid:'',
+			mainData:[],
+			paginate:{
+				count: 0,
+				currentPage: 1,
+				pagesize: 4,
+				is_page: true,
+			},
+			linkPage: [],
+			pageArray: [],
+			
+			allPages: 0,
+       sliderData:[]
+           }
+       },
+       
+       created () {
+           const self = this;
+       	self.getLabelData();
+       	self.getSliderData()
+       },
+       
+       methods:{
+       	
+       	
+       	getSliderData() {
+       		const self = this;
+       		const postData = {};
+       		postData.searchItem = {
+       			thirdapp_id: 2
+       		};
+       		postData.getBefore = {
+       			caseData: {
+       				tableName: 'Label',
+       				searchItem: {
+       					title: ['=', ['工程案例轮播图']],
+       				},
+       				middleKey: 'parentid',
+       				key: 'id',
+       				condition: 'in',
+       			},
+       		};
+       		postData.order={
+       			create_time:'asc'
+       		};
+       		const callback = (res) => {
+       			console.log(1000, res);
+       			if (res.info.data.length > 0) {
+       				self.sliderData.push.apply(self.sliderData, res.info.data)
+       			}
+       		};
+       		window.base.labelGet(postData, callback);
+       	},
+		
+		
+		getLabelData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				thirdapp_id: 2
+			};
+			postData.getBefore = {
+				caseData: {
+					tableName: 'Label',
+					searchItem: {
+						title: ['=', ['PROJECT']],
+					},
+					middleKey: 'parentid',
+					key: 'id',
+					condition: 'in',
+				},
+			};
+			postData.order = {
+				create_time:'asc'
+			};
+			const callback = (res) => {
+				if (res.info.data.length > 0) {
+					self.labelData.push.apply(self.labelData,res.info.data);
+					self.labelid = self.labelData[0].id;
+					self.getMainData()
+				} else {
+					
+				};
+				
+				
+			};
+			window.base.labelGet(postData, callback);
+		},
+		
+		getMainData() {
+			const self = this;
+			const postData = {};
+			postData.paginate = window.base.cloneForm(self.paginate);
+			postData.searchItem = {
+				menu_id: self.labelid
+			};
+			
+			const callback = (res) => {
+				if (res.info.data.length > 0) {
+					self.mainData.push.apply(self.mainData,res.info.data);
+					self.paginate['count'] = res.info.total;
+					window.base.computePageArr(self);
+				} else {
+					alert('no data')
+				};	
+			};
+			window.base.articleGet(postData, callback);
+		},
+		
+		changeLabel(e){
+			const self = this;
+			self.labelid = window.base.getDataSet(e,'labelid').labelid;
+			console.log(window.base.getDataSet(e,'labelid'));
+			self.mainData = [];
+			self.getMainData()
+		},
+		
+		linkTo(e) {
+			var self = this;
+			console.log(e);
+			self.linkPage = window.base.getDataSet(e).page;
+			window.base.linkTo(self);
+		},
+		
+		changePage(e) {
+			var self = this;
+			var dataSet = window.base.getDataSet(e);
+			window.base.changePage(dataSet, self);
+		},
+		
+		intoDetail:function(id){
+		    const self = this;
+		    window.location.href= 'detail.html?id='+id;
+		
+		},
+		
         change:function(e){
             const self = this;
             self.is_change = !self.is_change;

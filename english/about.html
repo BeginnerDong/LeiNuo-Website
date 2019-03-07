@@ -50,78 +50,89 @@
 
 <div id="app">
     <header>
-        <div class="navigation fixed-top">
-          <div class="navigation_box contain">
-             <div class="nav_toggle hidden-this" @click="toggleMenu">
-                 <img src="../images/nav.png" />
-             </div>
-            <div class="navigation_change">
-                <a class="color2" href="../index.html">中文</a>
-                <span class="color">/</span>
-                <a class="color" href="index.html">English</a>
-            </div>
-             <div class="navigation_right" id="computer">
-                 <ul class="navigate">
-                    <li><a href="index.html">HOME</a></li>
-                    <li class="nav_about" @mouseover="menuShow" @mouseout="menuHide">
-                        <a href="about.html" class="active">ABOUT</a>
-                    </li>
-                    <li><a href="case.html">PROJECT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-             </div>
-             <div class="navigation_left flex">
-                 <a href="index.html"><img src="../images/logo.png" class="img-responsive"></a>
-             </div>
-             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
-                 <ul class="navigate">
-                     <li><a href="index.html">HOME</a></li>
-                    <li class="nav_about" @click="clickShow">
-                        <a class="active">ABOUT</a>
-                    </li>
-                    <li><a href="case.html">PROJECT</a></li>
-                    <li><a href="contact.html">CONTACT</a></li>
-                </ul>
-             </div>
-          </div>  
+        	<div class="navigation fixed-top">
+        	<div class="navigation_box contain">
+        		<div class="nav_toggle hidden-this" @click="toggleMenu">
+        			<img src="images/nav.png" />
+        		</div>
+        		<div class="navigation_change">
+        			<a class="color1" href="../about.html">中文</a>
+        			<span class="color">/</span>
+        			<a class="color" href="about.html">English</a>
+        		</div>
+        		<div class="navigation_left flex">
+        			<a href="index.html"><img src="../images/logo1.png" class="img-responsive"></a>
+        		</div>
+        			<div class="navigation_right" id="computer">
+        		    <ul class="navigate">
+        		       <li><a href="index.html">HOME</a></li>
+        		       <li class="nav_about">
+        		           <a href="about.html" class="active">ABOUT</a>
+        		       </li>
+        			   <li><a href="news.html">NEWS</a></li>
+        		       <li><a href="case.html">PROJECT</a></li>
+        		       <li><a href="contact.html">CONTACT</a></li>
+        		   </ul>
+        		</div>
+        		
+        		<div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
+        			<ul class="navigate">
+        				<li><a href="index.html"  >HOME</a></li>
+        				<li class="nav_about">
+        				    <a href="about.html" class="active">ABOUT</a>
+        				</li>
+        				<li><a href="news.html">NEWS</a></li>
+        				<li><a href="case.html">PROJECT</a></li>
+        				<li><a href="contact.html">CONTACT</a></li>
+        			</ul>
+        		</div>
+        	</div>
         </div>
     </header>
     <div class="banner">
-        <img src="../images/banner.jpg" class="img-responsive" />
+    	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    		<ol class="carousel-indicators">
+    			<li v-for="(item, index) in sliderData" data-target="#carousel-example-generic" :data-slide-to="index" :class="index=='0'?'active':''"></li>
+    		</ol>
+    		<div class="carousel-inner" role="listbox">
+    			<div  class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
+    			  <img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" style="height:7.7rem" class="img-responsive banner_img">
+    			</div>
+    		</div> 
+    	</div>
     </div>
-    <div class="case">
+<div class="case">
         <div class="contain">
-            <div class="title">
-                <h2>
-                    <p class="color_a font36">Company Overview</p>
-                </h2>
-            </div>
             <div class="click_btn" :class="is_change?'':'changeJister'" @click="change">
                 <div class="change">点击切换</div>
             </div>
             <div id="case">
                 <div class="case_left" :class="is_change?'slideIn':''">
-                    <h4 class="font20 color1">工程案例</h4>
                     <ul>
-                        <li class="fontt20 color active">风电</li>
-                        <li class="fontt20 color">火电</li>
-                        <li class="fontt20 color">输变电</li>
-                        <li class="fontt20 color">光伏发电</li>
-
+                        <li class="font16 color " v-for="item in labelData" @click="changeLabel" :data-labelid="item.id" :class="labelid==item.id?'active':''">
+							{{item.title}}
+						</li>
                     </ul>
                 </div>
-                <div class="case_right shadow1">
+                <div class="case_right">
+                    <div class="title">
+                        <h2>
+                            <p class="color_a font36">{{mainData.title}}</p>
+    
+                        </h2>
+                    </div>
                     <div class="about_cont">
-                        <p class="color_a font14 avolidOverflow" >The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.</p>
-                        <img src="../images/img3.jpg" class="img-responsive"/>
-                        <p class="color_a font14">The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.The company's projects have spread over more than 20 provinces and municipalities directly under the central government, and established large-scale companies in Xinjiang, Guangzhou, Beijing and other places.</p>
+						<div class="content ql-editor " style="clear: both;">
+								<p class="p1 " v-html="mainData.content"></p>
+						</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="distribution">
+</div>
+<!-- <div class="distribution">
     <div class="contain">
         <div class="title">
             <h2>
@@ -137,7 +148,7 @@
             <img src="../images/img4.png"/>
         </div>
     </div>
-</div>
+</div> -->
 <div class="footer">
     <div class="footer_cont">
         <p class="font14 color_a">Copyight©2017 Xi'an Renault Energy Engineering Consulting corporation. All rights reserved. </p>
@@ -165,16 +176,116 @@ var app = new Vue({
     data: function() {
         return {
             is_toggle:false,
+            is_menu:false,
             is_change:false,
-        }
-    },
-    created () {
-        const self = this;
-    },
-    methods:{
-        menuShow: function(e) {
-            const self =this;
-            self.is_change = !self.is_change;          
+			labelData:[],
+			labelid:'',
+			mainData:[],
+       sliderData:[]
+           }
+       },
+       
+       created () {
+           const self = this;
+       	self.getLabelData();
+       	self.getSliderData()
+       },
+       
+       methods:{
+       	
+       	
+       	getSliderData() {
+       		const self = this;
+       		const postData = {};
+       		postData.searchItem = {
+       			thirdapp_id: 2
+       		};
+       		postData.getBefore = {
+       			caseData: {
+       				tableName: 'Label',
+       				searchItem: {
+       					title: ['=', ['关于我们轮播图']],
+       				},
+       				middleKey: 'parentid',
+       				key: 'id',
+       				condition: 'in',
+       			},
+       		};
+       		postData.order={
+       			create_time:'asc'
+       		};
+       		const callback = (res) => {
+       			console.log(1000, res);
+       			if (res.info.data.length > 0) {
+       				self.sliderData.push.apply(self.sliderData, res.info.data)
+       			}
+       		};
+       		window.base.labelGet(postData, callback);
+       	},
+		
+		
+		getLabelData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				thirdapp_id: 2
+			};
+			postData.getBefore = {
+				caseData: {
+					tableName: 'Label',
+					searchItem: {
+						title: ['=', ['ABOUT']],
+					},
+					middleKey: 'parentid',
+					key: 'id',
+					condition: 'in',
+				},
+			};
+			postData.order = {
+				create_time:'asc'
+			};
+			const callback = (res) => {
+				if (res.info.data.length > 0) {
+					self.labelData.push.apply(self.labelData,res.info.data);
+					self.labelid = self.labelData[0].id;
+					self.getMainData()
+				} else {
+					
+				};
+				
+				
+			};
+			window.base.labelGet(postData, callback);
+		},
+		
+		getMainData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				menu_id: self.labelid
+			};
+			
+			const callback = (res) => {
+				if (res.info.data.length > 0) {
+					self.mainData = res.info.data[0]
+				} else {
+					alert('no data')
+				};	
+			};
+			window.base.articleGet(postData, callback);
+		},
+		
+		changeLabel(e){
+			const self = this;
+			self.labelid = window.base.getDataSet(e,'labelid').labelid;
+			console.log(window.base.getDataSet(e,'labelid'));
+			self.mainData = [];
+			self.getMainData()
+		},
+		
+        change:function(e){
+            const self = this;
+            self.is_change = !self.is_change;
         },
         clickShow: function(e) {
             const self =this;
@@ -183,6 +294,10 @@ var app = new Vue({
         toggleMenu:function(e){
             const self = this;
             self.is_toggle = !self.is_toggle;
+        },
+        change:function(e){
+            const self = this;
+            self.is_change = !self.is_change;
         },
         intoPath:function(url){
             const self = this;

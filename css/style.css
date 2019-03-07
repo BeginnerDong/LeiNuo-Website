@@ -96,7 +96,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     cursor: pointer;
 }
 .fenye a:hover,.fenye a.active{
-    background: #eb3434;
+    background: #0c76f0;
     color: #fff;
 }
 #customize1{
@@ -462,8 +462,9 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     width:100%;
     min-height:1.2rem;
     z-index: 9999;
-    background: #fff;
-    box-shadow: 0 2px 10px #afdff5;
+    background: #2a2e4b;
+	opacity: 0.6;
+    /* box-shadow: 0 2px 10px #afdff5; */
 }
 .navigation_box{
     height:1.2rem;
@@ -472,7 +473,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 .navigation_left{
     width:21.5%;
     height:100%;
-    float: right;
+    float: left;
     text-align:right;
 }
 .navigation_left img{
@@ -484,9 +485,10 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 }
 .navigation_change{
     width:12%;
-    float:left;
+    float:right;
     height:100%;
     overflow: hidden;
+	text-align:center
 }
 .navigation_right{
     width: 66.5%;
@@ -498,10 +500,9 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     width:95%;
     min-height: 0.6rem;
     float: right;
-    background:#fff;
 }
 .navigate>li{
-    width:25%;
+    width:20%;
     height:1.2rem;
     line-height: 1.2rem;
     text-align: center;
@@ -509,15 +510,17 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 }
 
 .navigate li>a{
-    color: #021a35;
+    color: #fff;
     font-size: 0.20rem;
+	height:0.9rem
 }
 .navigate li>a:hover{
-    color:#0c76f0;
+    color:#fff;
     text-decoration:none;
 }
 .navigate li .active{
-    color:#0c76f0;
+    color:#fff;
+	border-bottom: 0.03rem solid #fff;
 }
 .nav_toggle{
     width:55%;
@@ -602,6 +605,9 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     background:#f7b4b4;
 }
 /***************************banner***************************/
+.banner{
+	height:7.7rem
+}
 .banner2{
     margin-top:1.2rem;
 }
@@ -650,18 +656,21 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 .shadow1{
     box-shadow: 0 0 0.2rem #f2f2f2;
 }
+
 .case_box{
-    height:3.6rem;
+    height:1.6rem;
+	display: flex;
+	width:50%
 }
 .case_box_left{
-    width:43%;
-    height:100%;
-    float:left;
+    width:100%;
+    height:160px;
+    padding: 10px;
     overflow: hidden;
 }
 .case_box_right{
     padding-left:3%;
-    width:54%;
+    width:100%;
     float:left;
 }
 .case_box_left img{
@@ -675,7 +684,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 }
 .case_box_right1{
     padding-right:3%;
-    width:54%;
+    width:100%;
     float:left;
 }
 .case_box_left1 img{
@@ -683,12 +692,21 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     height:100%;
 }
 .case_tlt{
-    height:0.92rem;
+    height:0.3rem;
+	display: flex;
+	align-items: center;
+}
+.dot{
+	height:0.08rem;
+	width:0.08rem;
+	border-radius:50%;
+	background-color:#0066CC;
+	margin-right: 0.3rem;
 }
 .case_tlt h3{
-    height:0.56rem;
+    height:0.3rem;
     margin-top:0.2rem;
-    line-height:0.26rem;
+    line-height:0.3rem;
 }
 .case_description{
     height:1.1rem;
@@ -781,7 +799,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 }
 .banner img{
     width:100%;
-    height:6rem;
+    height:7.7rem;
 }
 #contact_cont{
     min-height:6rem;
@@ -802,7 +820,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     margin-bottom:0.2rem;
 }
 .contact_phone{
-    margin-top:1.12rem;
+    margin-top:0.5rem;
 }
 .contact_email{
     margin-top:0.8rem;
@@ -814,6 +832,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     width:100%;
     height:6rem;
     position: relative;
+	background-color: #f5f5f5;
 }
 .message{
     width:5rem;
@@ -856,6 +875,46 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     margin:0.48rem auto 0 auto;
 }
 /***********项目案例***************/
+.case_box_case{
+    height:100%;
+	display: flex;
+}
+.case_box_left_case{
+    width:50%;
+    height:260px;
+    padding: 20px;
+    overflow: hidden;
+}
+.case_box_right_case{
+    padding-left:3%;
+    width:70%;
+    float:left;
+}
+.case_box_left_case img{
+    width:100%;
+    height:100%;
+}
+.case_box_left1_case{
+    width:50%;
+    height:100%;
+    padding: 20px;
+    overflow: hidden;
+}
+.case_box_right1_case{
+    padding-right:3%;
+    width:70%;
+    float:right;
+}
+.case_box_left1_case img{
+    width:100%;
+    height:100%;
+}
+.case_tlt_case{
+    height:0.3rem;
+	display: flex;
+	align-items: center;
+	padding-top:0.2rem;
+}
 .case_left{
     width:22.5%;
     float:left;
@@ -866,9 +925,24 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     background:#f5f5f5;
     margin-top:1rem;
 }
+.case_cont_case{
+    height:4.2rem;
+    padding-top:0.1rem;
+    margin-bottom:0.4rem;
+}
 .case_right{
     width:73.5%;
     float:right;
+}
+.case_right_case{
+    width:73.5%;
+    float:right;
+	margin-top:1rem;
+}
+.case_description_case{
+    height:1.1rem;
+    line-height:0.28rem;
+	margin-top: 0.2rem;
 }
 #case{
     overflow:hidden;
@@ -896,7 +970,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
     color:#fff;
 }
 .project{
-    height:3.3rem;
+    height:2.4rem;
 }
 .project .case_box{
     height:2.64rem;
@@ -967,7 +1041,7 @@ input,textarea {outline: none; -webkit-box-shadow: none; box-shadow: none;-webki
 .carousel{
     width:100%;
     height:100%;
-    margin-top:0.3rem;
+
 }
 .carousel-inner{
     width:100%;

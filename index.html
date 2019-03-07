@@ -1,33 +1,32 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>雷诺能源</title>
-<!-- custom-theme -->
-<meta name="baidu-site-verification" content="z8EeuYl0nS" />
-<meta name="keywords" content="雷诺能源">
-<meta name="description" content="雷诺能源">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/basic.css" rel="stylesheet" type="text/css"/>
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<link href="css/responsive.css" rel="stylesheet" type="text/css"/>
-<link href="css/wxParse.css" rel="stylesheet"/>
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="seo/sitemap.html.txt">
-<link href="seo/sitemap.txt">
-<link href="seo/sitemap.xml">
-<script src="js/browser.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<head>
+		<title>雷诺能源</title>
+		<!-- custom-theme -->
+		<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+		<meta name="keywords" content="雷诺能源">
+		<meta name="description" content="雷诺能源">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
+		<link href="css/wxParse.css" rel="stylesheet" />
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="seo/sitemap.html.txt">
+		<link href="seo/sitemap.txt">
+		<link href="seo/sitemap.xml">
+		<script src="js/browser.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-<script src="js/base.js" type="application/javascript"></script>
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script src="js/rem.js"></script>
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript " src="js/bootstrap.js"></script>
-<!--[if IE 9]>
+		<script src="js/base.js" type="application/javascript"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<!--[if IE 9]>
  <style>
     .animatedOpacity{
         opacity:1;
@@ -37,299 +36,540 @@
     }
  </style>
 <![endif]-->
-<style>
-    .carousel-indicators li {
-        margin:0 10px;
-    }
-    .carousel-indicators .active{
-        margin:0 10px;
-    }
-</style>
-</head>
-<body style="background:#fff;">
-<div class="header"></div>
+		<style>
+			.carousel-indicators li {
+				margin: 0 10px;
+			}
 
-<div id="app">
-    <header>
-        <div class="navigation fixed-top">
-          <div class="navigation_box contain">
-             <div class="nav_toggle hidden-this" @click="toggleMenu">
-                 <img src="images/nav.png" />
-             </div>
-             <div class="navigation_change">
-                 <a class="color" href="index.html">中文</a>
-                 <span class="color">/</span>
-                 <a class="color2" href="english/index.html">English</a>
-             </div>
-             <div class="navigation_right" id="computer">
-                 <ul class="navigate">
-                    <li><a href="index.html" class="active">首页</a></li>
-                    <li class="nav_about">
-                        <a href="about.html">关于我们</a>
-                    </li>
-                    <li><a href="case.html">工程案例</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                </ul>
-             </div>
-             <div class="navigation_left flex">
-                 <a href="index.html"><img src="images/logo.png" class="img-responsive"></a>
-             </div>
-             <div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
-                 <ul class="navigate">
-                     <li><a href="index.html" class="active">首页</a></li>
-                    <li class="nav_about" @click="clickShow">
-                        <a href="about.html">关于我们</a>
-                    </li>
-                    <li><a href="case.html">工程案例</a></li>
-                    <li><a href="contact.html">联系我们</a></li>
-                </ul>
-             </div>
-          </div>  
-        </div>
-    </header>
-    <!-- <div class="banner2">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li v-for="(item, index) in sliderData" data-target="#carousel-example-generic" :data-slide-to="index" :class="index=='0'?'active':''"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div  class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
-                  <img :src="item.url" class="img-responsive banner_img">
-                </div>
-            </div> 
-        </div>
-    </div> -->
-    <div class="banner2">
-        <img src="images/banner.jpg" class="img-responsive" />
-    </div>
-    <div class="case">
-        <div class="contain">
-            <div class="title">
-                <h2>
-                    <p class="color_a font36">工程案例</p>
-                    <span class="font16 color_a">COMPANGY’S CASE</span>
-                </h2>
-            </div>
-            <div class="case_cont shadow1 w710" @click="intoPath">
-                <div class=" case_box">
-                    <div class="case_box_left">
-                        <img src="images/img6.jpg"/>
-                    </div>
-                    <div class="case_box_right">
-                        <div class="case_tlt">
-                            <h3 class="font20 color_a avoidOverflow2">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
-                        </div>
-                        <div class="case_description avoidOverflow4 font20 color_a3">
-                            内容内容内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内内内容内容内容内容内容内容内容内容内容内容内容内容内内内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内内 内容内容内容内容内
-                        </div>
-                        <p class="font16 color6">2158-9-5</p>
-                    </div>
-                </div>
-            </div>
-            <div class="case_cont shadow1 w710"  @click="intoPath">
-                <div class=" case_box">
-                    <div class="case_box_left1">
-                        <img src="images/img6.jpg"/>
-                    </div>
-                    <div class="case_box_right1">
-                        <div class="case_tlt">
-                            <h3 class="font20 color_a avoidOverflow2">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
-                        </div>
-                        <div class="case_description avoidOverflow4 font20 color_a3">
-                            内容内容内容内容内容内容内容内容内容内容内容内容内容 内容内容内容内容内容内容内内容内容内容内容内容内容内容内容内容内容内容内容内内内容内容内容内容内容内容内容内容内容内容内容内容内内内容内容内容内容内容内容内容内容内容内容内容内容内内容内容内容内容内容内容内内 内容内容内容内容内
-                        </div>
-                        <p class="font16 color6">2158-9-5</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="contact">
-        <div class="title">
-                <h2>
-                    <p class="color_a font36">联系我们</p>
-                    <span class="font16 color_a">CONTACT US</span>
-                </h2>
-            </div>
-    </div>
-</div>
-<div class="hiddenDiv">
-    <h1>
-        <img src="images/case1.jpg" alt="雷诺能源">
-    </h1>
-</div>
-<div id="message">
-    <div class="message">
-        <p class="font16 color_a">在线留言</p>
-        <textarea placeholder="请输入在线留言"></textarea>
-        <input type="" name="" placeholder="请输入你的姓名" />
-        <input type="" name="" placeholder="请输入你的电话" />
-        <button class="font16 color1">提交</button>
-    </div>
-    <div id="dituContent" ></div>
-</div>
-<div class="footer">
-    <div class="footer_cont">
-        <p class="font14 color_a">Copyight©2017 西安雷诺能源工程咨询有限公司. All rights reserved. </p>
-        <p class="font14 color_a">版权所有：陕ICP17020086号-1</p>
-        <p class="font14 color_a">技术支持：西安纯粹科技公司</p>
-    </div>
-</div>
-<style type="text/css">
-    html,body{margin:0;padding:0;}
-    .iw_poi_title {color:#333;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
-    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+			.carousel-indicators .active {
+				margin: 0 10px;
+			}
+		</style>
+	</head>
+	<body style="background:#fff;">
+		<div class="header"></div>
 
-    .fade-enter-active{
-      transition: opacity .5s;
-    }
-    .fade-enter /* .fade-leave-active below version 2.1.8 */ {
-      opacity: 0 ;
-    }
+		<div id="app">
+			<header>
+				<div class="navigation fixed-top">
+					<div class="navigation_box contain">
+						<div class="nav_toggle hidden-this" @click="toggleMenu">
+							<img src="images/nav.png" />
+						</div>
+						<div class="navigation_change">
+							<a class="color" href="index.html">中文</a>
+							<span class="color">/</span>
+							<a class="color1" href="english/index.html">English</a>
+						</div>
+						<div class="navigation_left flex">
+							<a href="index.html"><img src="images/logo1.png" class="img-responsive"></a>
+						</div>
+						<div class="navigation_right" id="computer">
+							<ul class="navigate">
+								<li>
+									<a href="index.html" class="active">首页</a>
+								</li>
+								<li class="nav_about">
+									<a href="about.html">关于我们</a>
+								</li>
+								<li><a href="news.html">公司资讯</a></li>
+								<li><a href="case.html">工程案例</a></li>
+								<li><a href="contact.html">联系我们</a></li>
+							</ul>
+						</div>
 
+						<div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
+							<ul class="navigate">
+								<li><a href="index.html" class="active">首页</a></li>
+								<li class="nav_about" @click="clickShow">
+									<a href="about.html">关于我们</a>
+								</li>
+								<li><a href="news.html">公司资讯</a></li>
+								<li><a href="case.html">工程案例</a></li>
+								<li><a href="contact.html">联系我们</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<div class="banner">
+				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li v-for="(item, index) in sliderData" data-target="#carousel-example-generic" :data-slide-to="index" :class="index=='0'?'active':''"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<div  class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
+						  <img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" style="height:7.7rem" class="img-responsive banner_img">
+						</div>
+					</div> 
+				</div>
+			</div>
+			<!-- <div class="banner">
+				<img src="images/banner.jpg" class="img-responsive" />
+			</div> -->
+			<div class="case" style="display: flex;">
+				<div class="contain" style="padding-left: 385px;">
+					<div class="title">
+						<h2>
+							<p class="color_a font36">企业新闻</p>
+							<span class="font16 color_a">Corporate news</span>
+						</h2>
+					</div>
+					<div class="case_cont shadow1 w710">
+						<div style="display:flex">
+							<div class=" case_box" v-for="item in newsData" @click="intoDetail(item.id)">
+								<div class="case_box_left">
+									<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" />
+								</div>
 
-</style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+							</div>
+						</div>
+						<div class="case_box_right">
 
-<script type="text/javascript">
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+						</div>
+						<div class="case_box_right" @click="intoPath('news.html')">
 
-    function initMap(){
-        createMap();
-        setMapEvent();
-        addMapControl();
-        addMarker();
-    }
-    
-    function createMap(){
-        var map = new BMap.Map("dituContent");
-        var point = new BMap.Point(108.955322,34.328527);
-        map.centerAndZoom(point,17);
-        window.map = map;
-    }
-    
-    function setMapEvent(){
-        map.enableDragging();
-        map.enableScrollWheelZoom();
-        map.enableDoubleClickZoom();
-        map.enableKeyboard();
-    }
-    
-    function addMapControl(){ 
-    var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
-    map.addControl(ctrl_nav);
-    var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
-    map.addControl(ctrl_ove);
-    var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
-    map.addControl(ctrl_sca);
-    }
+							<div class="case_tlt">
 
-    var markerArr = [{title:"陕西省西安市未央区未央路149号银河华庭D座2607",content:"电话:029-89569644",point:"108.955322|34.328527",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-         ];
-    function addMarker(){
-        for(var i=0;i<markerArr.length;i++){
-            var json = markerArr[i];
-            var p0 = json.point.split("|")[0];
-            var p1 = json.point.split("|")[1];
-            var point = new BMap.Point(p0,p1);
-            var iconImg = createIcon(json.icon);
-            var marker = new BMap.Marker(point,{icon:iconImg});
-            var iw = createInfoWindow(i);
-            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-            marker.setLabel(label);
-            map.addOverlay(marker);
-            label.setStyle({
-                        borderColor:"transparent",
-                        color:"#000",
-                        cursor:"pointer",
-            });
-            
-            (function(){
-                var index = i;
-                var _iw = createInfoWindow(i);
-                var _marker = marker;
-                _marker.addEventListener("click",function(){
-                    this.openInfoWindow(_iw);
-                });
-                _iw.addEventListener("open",function(){
-                    _marker.getLabel().hide();
-                })
-                _iw.addEventListener("close",function(){
-                    _marker.getLabel().show();
-                })
-                label.addEventListener("click",function(){
-                    _marker.openInfoWindow(_iw);
-                })
-                if(!!json.isOpen){
-                    label.hide();
-                    _marker.openInfoWindow(_iw);
-                }
-            })()
-        }
-    }
-    function createInfoWindow(i){
-        var json = markerArr[i];
-        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
-        return iw;
-    }
-    function createIcon(json){
-        var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
-        return icon;
-    }
-    
-    initMap();
-</script>
+								<h2 class="font14 color ">查看更多 >></h3>
+							</div>
 
-<script type="text/javascript">
-    (function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-<script src="js/rem.js"></script>
-<script type="text/babel">
-var app = new Vue({
+						</div>
+					</div>
+				</div>
+				<div class="contain" style="padding-right: 385px;">
+					<div class="title">
+						<h2>
+							<p class="color_a font36">工程现状</p>
+							<span class="font16 color_a">Project status</span>
+						</h2>
+					</div>
+					<div class="case_cont shadow1 w710">
+						<div class=" case_box" v-for="(item,index) in projectData" v-if="index<2" @click="intoDetail(item.id)">
+							<div class="case_box_left">
+								<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" />
+							</div>
+
+						</div>
+
+						<div class="case_box_right">
+
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+							<div class="case_tlt">
+								<div class="dot"></div>
+								<h2 class="font16 color_a avoidOverflow">标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</h3>
+							</div>
+						</div>
+						<div class="case_box_right" @click="intoPath('case.html')">
+
+							<div class="case_tlt">
+
+								<h2 class="font14 color ">查看更多 >></h3>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="distribution">
+				<div class="contain">
+					<div class="title">
+						<h2>
+							<p class="color_a font36">我们的分布</p>
+							<span class="font16 color_a">DISTRBUTION</span>
+						</h2>
+					</div>
+					<div class="distribution_china">
+						<p class="font20 color_a">公司海外项目已在大洋洲、亚洲、非洲等地陆续开展 </p>
+						<img src="images/img8.png" />
+					</div>
+					<div class="distribution_foreign">
+						<p class="font20 color_a">公司项目已遍布国外的澳洲、柬埔寨</p>
+						<img src="images/img4.png" />
+					</div>
+				</div>
+			</div>
+			<!-- <div id="message">
+				<div class="contact">
+					<div class="title">
+						<h2>
+							<p class="color_a font36">联系我们</p>
+							<span class="font16 color_a">CONTACT US</span>
+						</h2>
+					</div>
+				</div>
+				<!-- <div class="message">
+					<p class="font16 color_a">在线留言</p>
+					<textarea placeholder="请输入在线留言"></textarea>
+					<input type="" name="" placeholder="请输入你的姓名" />
+					<input type="" name="" placeholder="请输入你的电话" />
+					<button class="font16 color1">提交</button>
+				</div>
+				<div id="dituContent"></div> 
+			</div> -->
+		</div>
+		<!-- <div class="hiddenDiv">
+			<h1>
+				<img src="images/case1.jpg" alt="雷诺能源">
+			</h1>
+		</div> -->
+
+		<div class="footer">
+			<div class="footer_cont">
+				<p class="font14 color_a">Copyight©2017 西安雷诺能源工程咨询有限公司. All rights reserved. </p>
+				<p class="font14 color_a">版权所有：陕ICP17020086号-1</p>
+				<p class="font14 color_a">技术支持：西安纯粹科技公司</p>
+			</div>
+		</div>
+		<style type="text/css">
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.iw_poi_title {
+				color: #333;
+				font-size: 14px;
+				font-weight: bold;
+				overflow: hidden;
+				padding-right: 13px;
+				white-space: nowrap
+			}
+
+			.iw_poi_content {
+				font: 12px arial, sans-serif;
+				overflow: visible;
+				padding-top: 4px;
+				white-space: -moz-pre-wrap;
+				word-wrap: break-word
+			}
+
+			.fade-enter-active {
+				transition: opacity .5s;
+			}
+
+			.fade-enter
+
+			/* .fade-leave-active below version 2.1.8 */
+				{
+				opacity: 0;
+			}
+		</style>
+		<!-- 		<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+		<script type="text/javascript">
+			function initMap() {
+				createMap();
+				setMapEvent();
+				addMapControl();
+				addMarker();
+			}
+
+			function createMap() {
+				var map = new BMap.Map("dituContent");
+				var point = new BMap.Point(108.955322, 34.328527);
+				map.centerAndZoom(point, 17);
+				window.map = map;
+			}
+
+			function setMapEvent() {
+				map.enableDragging();
+				map.enableScrollWheelZoom();
+				map.enableDoubleClickZoom();
+				map.enableKeyboard();
+			}
+
+			function addMapControl() {
+				var ctrl_nav = new BMap.NavigationControl({
+					anchor: BMAP_ANCHOR_TOP_LEFT,
+					type: BMAP_NAVIGATION_CONTROL_LARGE
+				});
+				map.addControl(ctrl_nav);
+				var ctrl_ove = new BMap.OverviewMapControl({
+					anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+					isOpen: 1
+				});
+				map.addControl(ctrl_ove);
+				var ctrl_sca = new BMap.ScaleControl({
+					anchor: BMAP_ANCHOR_BOTTOM_LEFT
+				});
+				map.addControl(ctrl_sca);
+			}
+
+			var markerArr = [{
+				title: "陕西省西安市未央区未央路149号银河华庭D座2607",
+				content: "电话:029-89569644",
+				point: "108.955322|34.328527",
+				isOpen: 0,
+				icon: {
+					w: 23,
+					h: 25,
+					l: 46,
+					t: 21,
+					x: 9,
+					lb: 12
+				}
+			}];
+
+			function addMarker() {
+				for (var i = 0; i < markerArr.length; i++) {
+					var json = markerArr[i];
+					var p0 = json.point.split("|")[0];
+					var p1 = json.point.split("|")[1];
+					var point = new BMap.Point(p0, p1);
+					var iconImg = createIcon(json.icon);
+					var marker = new BMap.Marker(point, {
+						icon: iconImg
+					});
+					var iw = createInfoWindow(i);
+					var label = new BMap.Label(json.title, {
+						"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)
+					});
+					marker.setLabel(label);
+					map.addOverlay(marker);
+					label.setStyle({
+						borderColor: "transparent",
+						color: "#000",
+						cursor: "pointer",
+					});
+
+					(function() {
+						var index = i;
+						var _iw = createInfoWindow(i);
+						var _marker = marker;
+						_marker.addEventListener("click", function() {
+							this.openInfoWindow(_iw);
+						});
+						_iw.addEventListener("open", function() {
+							_marker.getLabel().hide();
+						})
+						_iw.addEventListener("close", function() {
+							_marker.getLabel().show();
+						})
+						label.addEventListener("click", function() {
+							_marker.openInfoWindow(_iw);
+						})
+						if (!!json.isOpen) {
+							label.hide();
+							_marker.openInfoWindow(_iw);
+						}
+					})()
+				}
+			}
+
+			function createInfoWindow(i) {
+				var json = markerArr[i];
+				var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title +
+					"</b><div class='iw_poi_content'>" + json.content + "</div>");
+				return iw;
+			}
+
+			function createIcon(json) {
+				var icon = new BMap.Icon("images/us_mk_icon.png", new BMap.Size(json.w, json.h), {
+					imageOffset: new BMap.Size(-json.l, -json.t),
+					infoWindowOffset: new BMap.Size(json.lb + 5, 1),
+					offset: new BMap.Size(json.x, json.h)
+				})
+				return icon;
+			}
+
+			initMap();
+		</script>
+
+		<script type="text/javascript">
+			(function() {
+				var bp = document.createElement('script');
+				var curProtocol = window.location.protocol.split(':')[0];
+				if (curProtocol === 'https') {
+					bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+				} else {
+					bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+				}
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(bp, s);
+			})();
+		</script>
+		<script src="js/rem.js"></script> -->
+		<script type="text/babel">
+			var app = new Vue({
     el: '#app',
     data: function() {
         return {
             is_toggle:false,
             is_menu:false,
+			newsData:[],
+			projectData:[],
+			sliderData:[]
         }
     },
+	
     created () {
         const self = this;
+		self.getNewsData();
+		self.getProjectData();
+		self.getSliderData()
     },
+	
     methods:{
+		
+		getSliderData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				thirdapp_id: 2
+			};
+			postData.getBefore = {
+				caseData: {
+					tableName: 'Label',
+					searchItem: {
+						title: ['=', ['首页轮播图']],
+					},
+					middleKey: 'parentid',
+					key: 'id',
+					condition: 'in',
+				},
+			};
+			postData.order={
+				create_time:'asc'
+			};
+			const callback = (res) => {
+				console.log(1000, res);
+				if (res.info.data.length > 0) {
+					self.sliderData.push.apply(self.sliderData, res.info.data)
+				}
+			};
+			window.base.labelGet(postData, callback);
+		},
+		
+		getNewsData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				thirdapp_id: 2
+			};
+			postData.getBefore = {
+				caseData: {
+					tableName: 'Label',
+					searchItem: {
+						title: ['=', ['公司新闻']],
+					},
+					middleKey: 'menu_id',
+					key: 'id',
+					condition: 'in',
+				},
+			};
+			const callback = (res) => {
+				if (res.info.data.length > 0) {
+					self.newsData.push.apply(self.newsData,res.info.data)
+				} else {
+					
+				};
+				self.isLoad=false,
+				self.isLoadMsg=''
+				console.log('self.newsData', self.newsData)
+			};
+			window.base.articleGet(postData, callback);
+		},
+		
+		getProjectData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				thirdapp_id: 2
+			};
+			postData.getBefore = {
+				caseData: {
+					tableName: 'Label',
+					searchItem: {
+						title: ['=', ['工程现状']],
+					},
+					middleKey: 'menu_id',
+					key: 'id',
+					condition: 'in',
+				},
+			};
+			const callback = (res) => {
+				if (res.info.data.length > 0) {
+					self.projectData.push.apply(self.projectData,res.info.data)
+				} else {
+					
+				};
+				self.isLoad=false,
+				self.isLoadMsg=''
+				console.log('self.projectData', self.projectData)
+			};
+			window.base.articleGet(postData, callback);
+		},
+		
         menuShow: function(e) {
             const self =this;
             self.is_menu = true;          
         }, 
+		
         clickShow: function(e) {
             const self =this;
             self.is_menu = !self.is_menu;          
         },
+		
         menuHide: function(e) {
             const self =this;                              
              self.is_menu = false;                    
         },
+		
         toggleMenu:function(e){
             const self = this;
             self.is_toggle = !self.is_toggle;
         },
+		
         intoPath:function(url){
             const self = this;
             var toUrl = url;
             console.log(toUrl);
-            window.location.href='detail.html';
+            window.location.href= toUrl;
 
-        }
+        },
+		
+		intoDetail:function(id){
+		    const self = this;
+		    window.location.href= 'detail.html?id='+id;
+		
+		}
     }
 });
  $(function(){
@@ -337,10 +577,10 @@ var app = new Vue({
         $('.footer').load('./footer.html');
     });
 </script>
-<script>
-    function back_top(){
-     document.body.scrollTop = document.documentElement.scrollTop = 0;
-     }
- </script>
-</body>
+		<script>
+			function back_top() {
+				document.body.scrollTop = document.documentElement.scrollTop = 0;
+			}
+		</script>
+	</body>
 </html>

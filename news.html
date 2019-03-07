@@ -56,9 +56,9 @@
 							<img src="images/nav.png" />
 						</div>
 						<div class="navigation_change">
-							<a class="color" href="case.html">中文</a>
+							<a class="color" href="news.html">中文</a>
 							<span class="color">/</span>
-							<a class="color1" href="english/case.html">English</a>
+							<a class="color1" href="english/news.html">English</a>
 						</div>
 						<div class="navigation_left flex">
 							<a href="index.html"><img src="images/logo1.png" class="img-responsive"></a>
@@ -69,8 +69,8 @@
 								<li class="nav_about">
 									<a href="about.html">关于我们</a>
 								</li>
-								<li><a href="news.html">公司资讯</a></li>
-								<li><a href="case.html" class="active">工程案例</a></li>
+								<li><a href="news.html" class="active">公司资讯</a></li>
+								<li><a href="case.html">工程案例</a></li>
 								<li><a href="contact.html">联系我们</a></li>
 							</ul>
 						</div>
@@ -81,8 +81,8 @@
 								<li class="nav_about">
 									<a href="about.html">关于我们</a>
 								</li>
-								<li><a href="news.html">公司资讯</a></li>
-								<li><a href="case.html" class="active">工程案例</a></li>
+								<li><a href="news.html" class="active">公司资讯</a></li>
+								<li><a href="case.html">工程案例</a></li>
 								<li><a href="contact.html">联系我们</a></li>
 							</ul>
 						</div>
@@ -95,10 +95,10 @@
 						<li v-for="(item, index) in sliderData" data-target="#carousel-example-generic" :data-slide-to="index" :class="index=='0'?'active':''"></li>
 					</ol>
 					<div class="carousel-inner" role="listbox">
-						<div  class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
-						  <img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" style="height:7.7rem" class="img-responsive banner_img">
+						<div class="item" v-for="(item, index) in sliderData" :class="index=='0'?'active':''">
+							<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" style="height:7.7rem" class="img-responsive banner_img">
 						</div>
-					</div> 
+					</div>
 				</div>
 			</div>
 			<div class="case">
@@ -115,10 +115,16 @@
 							</ul>
 						</div>
 						<div class="case_right_case">
+							<!-- <div class="title">
+                        <h2>
+                            <p class="color_a font36">工程案例</p>
+                            <span class="font16 color_a">COMPANGY’S CASE</span>
+                        </h2>
+                    </div> -->
 							<div class="case_cont_case project shadow1 w710" @click="intoDetail(item.id)" v-for="(item,index) in mainData">
 								<div class=" case_box_case" v-if="index%2 ==0">
 
-									<div class="case_box_right1_case">
+									<div class="case_box_right_case">
 										<div class="case_tlt_case">
 											<h3 class="font16 color_a avoidOverflow2">
 												{{item.title}}
@@ -160,16 +166,16 @@
 							<span>
 								共{{allPages}}页
 							</span>
-							<a class="pages backPage" data-type="back" @click="changePage"><</a>
-							<span v-for="item in pageArray">
-								<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
-								<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
-							</span>
-							<a class="pages nextPage" data-type="next" @click="changePage">></a>
-							<span>
-								跳转至：
-								<input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
-							</span>
+							<a class="pages backPage" data-type="back" @click="changePage">
+								<</a> <span v-for="item in pageArray">
+									<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
+									<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
+									</span>
+									<a class="pages nextPage" data-type="next" @click="changePage">></a>
+									<span>
+										跳转至：
+										<input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
+									</span>
 						</div>
 					</div>
 				</div>
@@ -204,48 +210,47 @@
 			pageArray: [],
 			
 			allPages: 0,
-     sliderData:[]
-         }
-     },
-     
-     created () {
-         const self = this;
-     	self.getLabelData();
-     	self.getSliderData()
-     },
-     
-     methods:{
-     	
-     	
-     	getSliderData() {
-     		const self = this;
-     		const postData = {};
-     		postData.searchItem = {
-     			thirdapp_id: 2
-     		};
-     		postData.getBefore = {
-     			caseData: {
-     				tableName: 'Label',
-     				searchItem: {
-     					title: ['=', ['工程案例轮播图']],
-     				},
-     				middleKey: 'parentid',
-     				key: 'id',
-     				condition: 'in',
-     			},
-     		};
-     		postData.order={
-     			create_time:'asc'
-     		};
-     		const callback = (res) => {
-     			console.log(1000, res);
-     			if (res.info.data.length > 0) {
-     				self.sliderData.push.apply(self.sliderData, res.info.data)
-     			}
-     		};
-     		window.base.labelGet(postData, callback);
-     	},
+			sliderData:[]
+        }
+    },
+	
+    created () {
+        const self = this;
+		self.getLabelData();
+		self.getSliderData()
+    },
+	
+    methods:{
 		
+		
+		getSliderData() {
+			const self = this;
+			const postData = {};
+			postData.searchItem = {
+				thirdapp_id: 2
+			};
+			postData.getBefore = {
+				caseData: {
+					tableName: 'Label',
+					searchItem: {
+						title: ['=', ['公司资讯轮播图']],
+					},
+					middleKey: 'parentid',
+					key: 'id',
+					condition: 'in',
+				},
+			};
+			postData.order={
+				create_time:'asc'
+			};
+			const callback = (res) => {
+				console.log(1000, res);
+				if (res.info.data.length > 0) {
+					self.sliderData.push.apply(self.sliderData, res.info.data)
+				}
+			};
+			window.base.labelGet(postData, callback);
+		},
 		
 		getLabelData() {
 			const self = this;
@@ -257,7 +262,7 @@
 				caseData: {
 					tableName: 'Label',
 					searchItem: {
-						title: ['=', ['工程案例']],
+						title: ['=', ['公司资讯']],
 					},
 					middleKey: 'parentid',
 					key: 'id',
@@ -346,7 +351,8 @@
             console.log(toUrl);
             window.location.href='detail.html';
 
-        }
+        },
+		
     }
 });
  $(function(){

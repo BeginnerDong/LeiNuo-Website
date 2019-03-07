@@ -9,23 +9,22 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="css/basic.css" rel="stylesheet" type="text/css" />
-		<link href="css/style.css" rel="stylesheet" type="text/css" />
-		<link href="css/responsive.css" rel="stylesheet" type="text/css" />
-		<link href="css/wxParse.css" rel="stylesheet" />
-		<link href="css/font-awesome.min.css" rel="stylesheet">
-		<link href="seo/sitemap.html.txt">
-		<link href="seo/sitemap.txt">
-		<link href="seo/sitemap.xml">
-		<script src="js/browser.min.js"></script>
+		<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="../css/basic.css" rel="stylesheet" type="text/css" />
+		<link href="../css/style.css" rel="stylesheet" type="text/css" />
+		<link href="../css/responsive.css" rel="stylesheet" type="text/css" />
+		<link href="../css/wxParse.css" rel="stylesheet" />
+		<link href="../css/font-awesome.min.css" rel="stylesheet">
+		<link href="../seo/sitemap.html.txt">
+		<link href="../seo/sitemap.txt">
+		<link href="../seo/sitemap.xml">
+		<script src="../js/browser.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-		<script src="js/base.js" type="application/javascript"></script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-		<script src="js/rem.js"></script>
-		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript " src="js/bootstrap.js"></script>
+		<script src="../js/base.js" type="application/javascript"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		<script src="../js/rem.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript " src="../js/bootstrap.js"></script>
 		<!--[if IE 9]>
  <style>
     .animatedOpacity{
@@ -53,37 +52,37 @@
 				<div class="navigation fixed-top">
 					<div class="navigation_box contain">
 						<div class="nav_toggle hidden-this" @click="toggleMenu">
-							<img src="images/nav.png" />
+							<img src="../images/nav.png" />
 						</div>
 						<div class="navigation_change">
-							<a class="color" href="case.html">中文</a>
+							<a class="color" href="../news.html">中文</a>
 							<span class="color">/</span>
-							<a class="color1" href="english/case.html">English</a>
+							<a class="color1" href="news.html">English</a>
 						</div>
 						<div class="navigation_left flex">
-							<a href="index.html"><img src="images/logo1.png" class="img-responsive"></a>
+							<a href="index.html"><img src="../images/logo1.png" class="img-responsive"></a>
 						</div>
 						<div class="navigation_right" id="computer">
 							<ul class="navigate">
-								<li><a href="index.html">首页</a></li>
+								<li><a href="index.html">HOME</a></li>
 								<li class="nav_about">
-									<a href="about.html">关于我们</a>
+									<a href="about.html">ABOUT</a>
 								</li>
-								<li><a href="news.html">公司资讯</a></li>
-								<li><a href="case.html" class="active">工程案例</a></li>
-								<li><a href="contact.html">联系我们</a></li>
+								<li><a href="news.html" class="active">NEWS</a></li>
+								<li><a href="case.html">PROJECT</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
 							</ul>
 						</div>
 
 						<div class="navigation_right orgin" :class="(is_toggle?'after':'')" id="phone">
 							<ul class="navigate">
-								<li><a href="index.html">首页</a></li>
+								<li><a href="index.html">HOME</a></li>
 								<li class="nav_about">
-									<a href="about.html">关于我们</a>
+									<a href="about.html">ABOUT</a>
 								</li>
-								<li><a href="news.html">公司资讯</a></li>
-								<li><a href="case.html" class="active">工程案例</a></li>
-								<li><a href="contact.html">联系我们</a></li>
+								<li><a href="news.html" class="active">NEWS</a></li>
+								<li><a href="case.html">PROJECT</a></li>
+								<li><a href="contact.html">CONTACT</a></li>
 							</ul>
 						</div>
 					</div>
@@ -115,10 +114,16 @@
 							</ul>
 						</div>
 						<div class="case_right_case">
+							<!-- <div class="title">
+                        <h2>
+                            <p class="color_a font36">工程案例</p>
+                            <span class="font16 color_a">COMPANGY’S CASE</span>
+                        </h2>
+                    </div> -->
 							<div class="case_cont_case project shadow1 w710" @click="intoDetail(item.id)" v-for="(item,index) in mainData">
 								<div class=" case_box_case" v-if="index%2 ==0">
 
-									<div class="case_box_right1_case">
+									<div class="case_box_right_case">
 										<div class="case_tlt_case">
 											<h3 class="font16 color_a avoidOverflow2">
 												{{item.title}}
@@ -135,7 +140,7 @@
 										<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" class="img-responsive" />
 									</div>
 								</div>
-								<div class=" case_box_case" v-if="index%2 !=0">
+								<div class=" case_box" v-if="index%2 !=0">
 									<div class="case_box_left1_case">
 										<img :src="item.mainImg&&item.mainImg[0].url?item.mainImg[0].url:''" class="img-responsive" />
 									</div>
@@ -160,16 +165,16 @@
 							<span>
 								共{{allPages}}页
 							</span>
-							<a class="pages backPage" data-type="back" @click="changePage"><</a>
-							<span v-for="item in pageArray">
-								<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
-								<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
-							</span>
-							<a class="pages nextPage" data-type="next" @click="changePage">></a>
-							<span>
-								跳转至：
-								<input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
-							</span>
+							<a class="pages backPage" data-type="back" @click="changePage">
+								<</a> <span v-for="item in pageArray">
+									<a v-if="item == paginate.currentPage" class="currentpages active">{{item}}</a>
+									<a v-if="item != paginate.currentPage" class="currentpages" :data-page="item" @click="linkTo">{{item}}</a>
+									</span>
+									<a class="pages nextPage" data-type="next" @click="changePage">></a>
+									<span>
+										跳转至：
+										<input style="border:1px solid black;" :data-page="linkPage" v-model="linkPage" @blur="linkTo" />
+									</span>
 						</div>
 					</div>
 				</div>
@@ -177,9 +182,10 @@
 		</div>
 		<div class="footer">
 			<div class="footer_cont">
-				<p class="font14 color_a">Copyight©2017 西安雷诺能源工程咨询有限公司. All rights reserved. </p>
-				<p class="font14 color_a">版权所有：陕ICP17020086号-1</p>
-				<p class="font14 color_a">技术支持：西安纯粹科技公司</p>
+				<p class="font14 color_a">Copyight©2017 Xi'an Renault Energy Engineering Consulting corporation. All rights
+					reserved. </p>
+				<p class="font14 color_a">all rights reserved：Shan ICP17020086-1</p>
+				<p class="font14 color_a">Technical support: Xi'an Solely Technology Company</p>
 			</div>
 		</div>
 		<script src="js/rem.js"></script>
@@ -204,7 +210,7 @@
 			pageArray: [],
 			
 			allPages: 0,
-     sliderData:[]
+      sliderData:[]
          }
      },
      
@@ -227,7 +233,7 @@
      			caseData: {
      				tableName: 'Label',
      				searchItem: {
-     					title: ['=', ['工程案例轮播图']],
+     					title: ['=', ['公司资讯轮播图']],
      				},
      				middleKey: 'parentid',
      				key: 'id',
@@ -257,7 +263,7 @@
 				caseData: {
 					tableName: 'Label',
 					searchItem: {
-						title: ['=', ['工程案例']],
+						title: ['=', ['NEWS']],
 					},
 					middleKey: 'parentid',
 					key: 'id',
@@ -295,7 +301,7 @@
 					self.paginate['count'] = res.info.total;
 					window.base.computePageArr(self);
 				} else {
-					alert('没有数据')
+					alert('no data')
 				};	
 			};
 			window.base.articleGet(postData, callback);
@@ -346,7 +352,8 @@
             console.log(toUrl);
             window.location.href='detail.html';
 
-        }
+        },
+		
     }
 });
  $(function(){
